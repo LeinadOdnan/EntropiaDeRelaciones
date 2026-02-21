@@ -1,2 +1,2 @@
 # EntropiaDeRelaciones
-1ra pomposición
+1ra composición
