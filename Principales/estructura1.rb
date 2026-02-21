@@ -382,6 +382,20 @@ live_loop :percusion do
       sleep 4
     end
   end
+
+  sync :puente_2
+  with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
+    4.times do
+      sample :bd_haus, amp: 1.2
+      sleep 9
+      
+      sample :elec_snare, amp: 1 if spread(2,4).tick
+      sleep 3
+      
+      sample :drum_cymbal_closed, amp: 2, rate: 1.5 if spread(3,8).look
+      sleep 6
+    end
+  end
   
   sync :verso_3
   with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
@@ -389,6 +403,17 @@ live_loop :percusion do
       sample :drum_cymbal_open, amp: 1.5
       9.times do
         sample :drum_cymbal_hard, amp: 1.5
+        sleep 0.5
+      end
+    end
+  end
+
+  sync :puente_3
+  with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
+    8.times do
+      sample :bd_haus, amp: 3
+      18.times do
+        sample :elec_snare, amp: 0.6
         sleep 0.5
       end
     end
@@ -529,7 +554,16 @@ live_loop :bajo do
   end
   
   sync :puente_2
-  sleep 72
+  use_synth_defaults amp: 3, release: 0.4
+  with_fx :lpf, cutoff: 60 do
+    2.times do
+      play :e2; sleep 9
+      play :g2; sleep 9
+      play :a2; sleep 9
+    end
+    play :e2; sleep 9
+    play :g2; sleep 9
+  end
   
   sync :verso_3
   use_synth_defaults amp: 3, release: 0.4
@@ -541,8 +575,15 @@ live_loop :bajo do
     end
   end
   
-  ##| sync :puente_3
-  ##| sleep 72
+  sync :puente_3
+  use_synth_defaults amp: 7, release: 0.4
+  with_fx :lpf, cutoff: 60 do
+    8.times do
+      play :g2; sleep 2.5
+      play :d2; sleep 3
+      play :e2; sleep 3.5
+    end
+  end
   
   sync :verso_4
   use_synth_defaults amp: 1.5, release: 0.4
@@ -663,12 +704,19 @@ live_loop :pad do
     end
   end
   
-  ##| sync :puente_2
-  ##| play chord(:e3, :minor)
-  ##| sleep 72
-  
-  ##| sync :puente_3
-  ##| sleep 72
+  sync :puente_3
+  use_synth_defaults amp: 0.8, attack: 2, release: 6
+  with_fx :reverb, room: 0.9, mix: 0.5 do
+    with_fx :wobble, phase: 16, mix: 0.3 do
+      2.times do
+        sleep 6
+        play chord(:g3, :minor), sustain: 6
+        sleep 21
+      end
+      play chord(:g3, :minor), sustain: 6
+      sleep 18
+    end
+  end
   
   sync :verso_4
   use_synth_defaults amp: 0.8, attack: 2, release: 6
@@ -777,5 +825,6 @@ live_loop :estructura do
   
   stop
 end
+
 
 
