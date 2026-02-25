@@ -1,4 +1,5 @@
 live_loop :estructura do
+    use_bpm 120
     sleep 6
 
     cue :intro
