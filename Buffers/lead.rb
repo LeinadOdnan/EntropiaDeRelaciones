@@ -9,7 +9,9 @@ live_loop :lead do
         end
     end
 
-    sync :intro
+    case get(:section)
+
+    when :intro
     use_synth :prophet
     use_synth_defaults amp: 1.2
     3.times do
@@ -51,7 +53,7 @@ live_loop :lead do
     end
     
     
-    sync :verso_1
+    when :verso_1
     use_synth :square
     with_fx :flanger, phase: 2, depth: 3, mix: 0.7 do
       32.times do
@@ -63,7 +65,7 @@ live_loop :lead do
     end
     
     
-    sync :puente_1
+    when :puente_1
     use_synth :dsaw
     with_fx :echo, phase: 4.5, decay: 3, mix: 0.6 do
       8.times do
@@ -82,7 +84,7 @@ live_loop :lead do
       end
     end
     
-    sync :verso_2
+    when :verso_2
     use_synth :prophet
     use_synth_defaults amp: 0.8, sustain: 0, attack_level: 0.3
     with_fx :wobble, phase: 9, cutoff_min: 40, cutoff_max: 100, wave: 0, res: 0.6, mix: 0.6 do
@@ -103,7 +105,7 @@ live_loop :lead do
       end
     end
     
-    sync :puente_2
+    when :puente_2
     use_synth :fm
     8.times do
       co = line(40, 100, steps: 8).tick(:co)
@@ -123,7 +125,7 @@ live_loop :lead do
       end
     end
     
-    sync :verso_3
+    when :verso_3
     use_synth :fm
     use_synth_defaults amp: 1.2
     with_fx :compressor, threshold: 0.5, slope_above: 0.5 do
@@ -143,7 +145,7 @@ live_loop :lead do
       end
     end
     
-    sync :puente_3
+    when :puente_3
     use_synth :fm
     8.times do
       co = line(100, 40, steps: 8).tick(:co)
@@ -173,7 +175,7 @@ live_loop :lead do
       end
     end
     
-    sync :verso_4
+    when :verso_4
     use_synth :prophet
     use_synth_defaults amp: 0.8, sustain: 0, attack_level: 0.3
     with_fx :wobble, phase: 9, cutoff_min: 40, cutoff_max: 100, wave: 0, res: 0.6, mix: 0.6 do
@@ -192,7 +194,7 @@ live_loop :lead do
       end
     end
     
-    sync :puente_4
+    when :puente_4
     use_synth :dsaw
     with_fx :echo, phase: 4.5, decay: 3, mix: 0.6 do
       8.times do
@@ -209,7 +211,7 @@ live_loop :lead do
       end
     end
     
-    sync :verso_5
+    when :verso_5
     use_synth :prophet
     12.times do
       amp = line(0.8, 1.2, steps: 12).tick(:amp)
@@ -236,7 +238,7 @@ live_loop :lead do
       end
     end
     
-    sync :puente_5
+    when :puente_5
     use_synth :fm
     8.times do
       co = line(40, 100, steps: 8).tick(:co)
@@ -257,7 +259,7 @@ live_loop :lead do
       end
     end
     
-    sync :verso_6
+    when :verso_6
     use_synth :dsaw
     use_synth_defaults amp: 0.6, release: 0.3, attack: 0.01
     with_fx :hpf, cutoff: 90 do
@@ -271,7 +273,7 @@ live_loop :lead do
       end
     end
     
-    sync :puente_6
+    when :puente_6
     use_synth :dsaw
     4.times do
       co = line(100, 80, steps: 4).tick(:co)
@@ -296,7 +298,7 @@ live_loop :lead do
       end
     end
     
-    sync :verso7
+    when :verso7
     use_synth :piano
     use_synth_defaults cutoff: 80, attack: 0.1, decay: 3, sustain: 0.6, release: 6, amp: 1
     with_fx :reverb, room: 0.85, mix: 0.35 do
@@ -310,7 +312,7 @@ live_loop :lead do
       end
     end
     
-    sync :final
+    when :final
     use_synth :piano
     sleep_times = [1, 2, 4, 8, 16, 32].ring
     cutoffs     = line(90, 50, steps: 6).ring
@@ -336,5 +338,6 @@ live_loop :lead do
       end
     end
     
-  end
+    end
+end
   

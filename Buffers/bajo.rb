@@ -1,7 +1,9 @@
 live_loop :bajo do
     use_synth :tb303
+
+    case get(:section)
     
-    sync :verso_1
+    when :verso_1
     use_synth_defaults amp: 3, release: 0.4
     with_fx :lpf, cutoff: 60 do
       16.times do
@@ -11,7 +13,7 @@ live_loop :bajo do
       end
     end
     
-    sync :puente_1
+    when :puente_1
     use_synth_defaults amp:7, release: 0.4
     with_fx :lpf, cutoff: 60 do
       4.times do
@@ -21,7 +23,7 @@ live_loop :bajo do
       end
     end
     
-    sync :verso_2
+    when :verso_2
     use_synth_defaults amp: 1.5, release: 0.4
     with_fx :lpf, cutoff: 60 do
       2.times do
@@ -33,7 +35,7 @@ live_loop :bajo do
       play :g2; sleep 9
     end
     
-    sync :puente_2
+    when :puente_2
     use_synth_defaults amp: 3, release: 0.4
     with_fx :lpf, cutoff: 60 do
       2.times do
@@ -45,7 +47,7 @@ live_loop :bajo do
       play :g2; sleep 9
     end
     
-    sync :verso_3
+    when :verso_3
     use_synth_defaults amp: 3, release: 0.4
     with_fx :lpf, cutoff: 60 do
       4.times do
@@ -55,7 +57,7 @@ live_loop :bajo do
       end
     end
     
-    sync :puente_3
+    when :puente_3
     use_synth_defaults amp: 7, release: 0.4
     with_fx :lpf, cutoff: 60 do
       8.times do
@@ -65,7 +67,7 @@ live_loop :bajo do
       end
     end
     
-    sync :verso_4
+    when :verso_4
     use_synth_defaults amp: 1.5, release: 0.4
     with_fx :lpf, cutoff: 60 do
       play :g2; sleep 9
@@ -75,7 +77,7 @@ live_loop :bajo do
       play :e2; sleep 9
     end
     
-    sync :puente_4
+    when :puente_4
     use_synth_defaults amp: 3, release: 0.4
     with_fx :lpf, cutoff: 60 do
       2.times do
@@ -86,7 +88,7 @@ live_loop :bajo do
       end
     end
     
-    sync :verso_5
+    when :verso_5
     use_synth_defaults amp: 2, release: 0.4
     with_fx :lpf, cutoff: 60 do
       play :e2; sleep 9
@@ -103,7 +105,7 @@ live_loop :bajo do
       end
     end
     
-    sync :puente_5
+    when :puente_5
     use_synth_defaults amp: 2, release: 0.4
     with_fx :lpf, cutoff: 60 do
       8.times do
@@ -116,7 +118,7 @@ live_loop :bajo do
       end
     end
     
-    sync :verso_6
+    when :verso_6
     use_synth_defaults amp: 4.5, release: 0.4
     with_fx :lpf, cutoff: 60 do
       25.times do
@@ -127,13 +129,15 @@ live_loop :bajo do
       end
     end
     
-    ##| sync :puente_6
+    ##| when :puente_6
     ##| sleep 68
     
-    ##| sync :verso7
+    ##| when :verso7
     ##| sleep 144
     
-    ##| sync :final
+    ##| when :final
     ##| stop
-  end
+
+    end
+end
   
