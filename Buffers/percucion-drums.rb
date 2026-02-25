@@ -1,4 +1,5 @@
 live_loop :percusion do
+  sync :section_changed
   case get(:section)
 
     when :verso_1

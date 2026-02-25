@@ -1,6 +1,7 @@
 live_loop :pad do
     use_synth :hollow
 
+    sync :section_changed
     case get(:section)
     
     when :intro

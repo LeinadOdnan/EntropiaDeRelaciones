@@ -9,6 +9,7 @@ live_loop :lead do
         end
     end
 
+    sync :section_changed
     case get(:section)
 
     when :intro

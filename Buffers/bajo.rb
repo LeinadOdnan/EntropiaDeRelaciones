@@ -1,6 +1,7 @@
 live_loop :bajo do
     use_synth :tb303
 
+    sync :section_changed
     case get(:section)
     
     when :verso_1
