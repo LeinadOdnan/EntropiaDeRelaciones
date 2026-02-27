@@ -27,13 +27,12 @@ live_loop :bajo do
     when :verso_2
     use_synth_defaults amp: 1.5, release: 0.4
     with_fx :lpf, cutoff: 60 do
-      2.times do
+      3.times do
         play :a2; sleep 9
         play :g2; sleep 9
         play :e2; sleep 9
       end
       play :a2; sleep 9
-      play :g2; sleep 9
     end
     
     when :puente_2

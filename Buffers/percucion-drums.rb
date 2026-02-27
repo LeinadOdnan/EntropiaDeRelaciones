@@ -30,7 +30,7 @@ live_loop :percusion do
     
     when :verso_2
     with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
-      4.times do
+      5.times do
         sample :bd_haus, amp: 0.8
         sleep 9
         
@@ -110,7 +110,7 @@ live_loop :percusion do
     
     when :verso_5
     with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
-      3.times do
+      4.times do
         sample :bd_haus, amp: 0.8
         sleep 9
         
