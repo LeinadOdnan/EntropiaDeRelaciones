@@ -1,10 +1,7 @@
 live_loop :pad do
     use_synth :hollow
-
-    sync :section_changed
-    case get(:section)
     
-    when :intro
+    sync :intro
     use_synth_defaults attack: 2, sustain: 3, release: 4, amp: 2, cutoff: 70
     with_fx :reverb, room: 0.9, mix: 0.6 do
       11.times do
@@ -13,7 +10,7 @@ live_loop :pad do
       end
     end
     
-    when :verso_1
+    sync :verso_1
     use_synth_defaults amp: 2, attack: 2, release: 6
     with_fx :reverb, room: 0.9, mix: 0.5 do
       with_fx :wobble, phase: 16, mix: 0.3 do
@@ -24,7 +21,7 @@ live_loop :pad do
       end
     end
     
-    when :puente_1
+    sync :puente_1
     use_synth_defaults amp: 3, attack: 4, release: 12
     with_fx :reverb, room: 0.9, mix: 0.5 do
       with_fx :wobble, phase: 16, mix: 0.3 do
@@ -35,7 +32,7 @@ live_loop :pad do
       end
     end
     
-    when :verso_2
+    sync :verso_2
     use_synth_defaults amp: 0.8, attack: 1.2, release: 4
     with_fx :reverb, room: 0.9, mix: 0.5 do
       with_fx :wobble, phase: 16, mix: 0.3 do
@@ -46,7 +43,7 @@ live_loop :pad do
       end
     end
     
-    when :puente_3
+    sync :puente_3
     use_synth_defaults amp: 0.8, attack: 2, release: 6
     with_fx :reverb, room: 0.9, mix: 0.5 do
       with_fx :wobble, phase: 16, mix: 0.3 do
@@ -60,7 +57,7 @@ live_loop :pad do
       end
     end
     
-    when :verso_4
+    sync :verso_4
     use_synth_defaults amp: 0.8, attack: 2, release: 6
     with_fx :reverb, room: 0.9, mix: 0.5 do
       with_fx :wobble, phase: 16, mix: 0.3 do
@@ -71,7 +68,7 @@ live_loop :pad do
       end
     end
     
-    when :puente_4
+    sync :puente_4
     use_synth_defaults amp: 3, attack: 1, release: 3
     with_fx :reverb, room: 0.9, mix: 0.5 do
       with_fx :wobble, phase: 16, mix: 0.3 do
@@ -82,7 +79,7 @@ live_loop :pad do
       end
     end
     
-    when :verso_5
+    sync :verso_5
     use_synth_defaults amp: 1, attack: 2, release: 12
     with_fx :reverb, room: 0.9, mix: 0.5 do
       with_fx :wobble, phase: 18, mix: 0.3 do
@@ -96,10 +93,10 @@ live_loop :pad do
     end
     
     
-    ##| when :puente_6
+    ##| sync :puente_6
     ##| sleep 68
     
-    when :verso7
+    sync :verso7
     use_synth_defaults attack: 3, decay: 4, sustain: 0.8, release: 8, amp: 1
     with_fx :lpf, cutoff: 75 do
       with_fx :reverb, room: 0.9, mix: 0.5 do

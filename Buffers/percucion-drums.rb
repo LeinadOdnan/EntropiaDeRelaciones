@@ -1,8 +1,6 @@
 live_loop :percusion do
-  sync :section_changed
-  case get(:section)
 
-    when :verso_1
+    sync :verso_1
     with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
       32.times do
         sample :bd_haus, amp: 1.6
@@ -15,7 +13,7 @@ live_loop :percusion do
       end
     end
     
-    when :puente_1
+    sync :puente_1
     with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
       8.times do
         sample :bd_haus, amp: 2
@@ -28,7 +26,7 @@ live_loop :percusion do
       end
     end
     
-    when :verso_2
+    sync :verso_2
     with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
       5.times do
         sample :bd_haus, amp: 0.8
@@ -42,7 +40,7 @@ live_loop :percusion do
       end
     end
   
-    when :puente_2
+    sync :puente_2
     with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
       4.times do
         sample :bd_haus, amp: 1.2
@@ -56,7 +54,7 @@ live_loop :percusion do
       end
     end
     
-    when :verso_3
+    sync :verso_3
     with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
       8.times do
         sample :drum_cymbal_open, amp: 1.5
@@ -67,7 +65,7 @@ live_loop :percusion do
       end
     end
   
-    when :puente_3
+    sync :puente_3
     with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
       8.times do
         sample :bd_haus, amp: 3
@@ -78,7 +76,7 @@ live_loop :percusion do
       end
     end
     
-    when :verso_4
+    sync :verso_4
     with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
       2.times do
         sample :bd_haus, amp: 0.8
@@ -94,7 +92,7 @@ live_loop :percusion do
       sleep 9
     end
     
-    when :puente_4
+    sync :puente_4
     with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
       4.times do
         sample :bd_haus, amp: 0.8
@@ -108,7 +106,7 @@ live_loop :percusion do
       end
     end
     
-    when :verso_5
+    sync :verso_5
     with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
       4.times do
         sample :bd_haus, amp: 0.8
@@ -132,7 +130,7 @@ live_loop :percusion do
       end
     end
     
-    when :puente_5
+    sync :puente_5
     with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
       8.times do
         sample :drum_cymbal_closed, amp: 1
@@ -155,7 +153,7 @@ live_loop :percusion do
       end
     end
     
-    when :verso_6
+    sync :verso_6
     with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
       25.times do
         sample :drum_cymbal_closed, amp: 4
@@ -167,13 +165,13 @@ live_loop :percusion do
       end
     end
     
-    ##| when :puente_6
+    ##| sync :puente_6
     ##| sleep 68
     
-    ##| when :verso7
+    ##| sync :verso7
     ##| sleep 144
     
-    ##| when :final
+    ##| sync :final
     ##| stop
 
   end
