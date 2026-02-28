@@ -326,7 +326,6 @@ live_loop :lead do
         sleep st
       end
     end
-    
-    end
+    stop
 end
   

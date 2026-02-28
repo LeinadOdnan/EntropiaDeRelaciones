@@ -172,8 +172,7 @@ live_loop :percusion do
     ##| sleep 144
     
     ##| sync :final
-    ##| stop
+    stop
 
-  end
 end
   

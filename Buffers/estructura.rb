@@ -1,7 +1,4 @@
-#FUNCIONES
-define :b do |beats| #para resolucion de 0.5 beats
-  return beats * 2
-end
+#Correr los instrumentos primero y a ultimo la estructura.
 
 #Compaces/ notas
 define :subintro do
@@ -22,55 +19,53 @@ end
 
 #STRUCTURE
 live_loop :estructura do
-  sync :tickClock
-  case tickClock
-  
-    sleep b(20) #Tiempo de espera para que corran los otros buffers
 
-    cue :intro
-    sleep b(82.5)   # duración real del intro
+  sync :tickClock
   
-    cue :verso_1
-    sleep b(64)
-    
-    cue :puente_1
-    sleep b(36)
-    
-    cue :verso_2
-    sleep b(90)
-    
-    cue :puente_2
-    sleep b(72)
-    
-    cue :verso_3
-    sleep b(36)
-    
-    cue :puente_3
-    sleep b(72)
-    
-    cue :verso_4
-    sleep b(45)
-    
-    cue :puente_4
-    sleep b(36)
-    
-    cue :verso_5
-    sleep b(108)
-    
-    cue :puente_5
-    sleep b(60)
-    
-    cue :verso_6
-    sleep b(50)
-    
-    cue :puente_6
-    sleep b(68)
-    
-    cue :verso7
-    sleep b(144)
-    
-    cue :final
-    sleep b(63)
-    
-    stop
-  end
+  cue :intro
+  sleep 82.5   # duración real del intro
+  
+  cue :verso_1
+  sleep 64
+  
+  cue :puente_1
+  sleep 36
+  
+  cue :verso_2
+  sleep 90
+  
+  cue :puente_2
+  sleep 72
+  
+  cue :verso_3
+  sleep 36
+  
+  cue :puente_3
+  sleep 72
+  
+  cue :verso_4
+  sleep 45
+  
+  cue :puente_4
+  sleep 36
+  
+  cue :verso_5
+  sleep 108
+  
+  cue :puente_5
+  sleep 60
+  
+  cue :verso_6
+  sleep 50
+  
+  cue :puente_6
+  sleep 68
+  
+  cue :verso7
+  sleep 144
+  
+  cue :final
+  sleep 63
+  
+  stop
+end

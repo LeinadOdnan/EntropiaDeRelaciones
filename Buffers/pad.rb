@@ -114,7 +114,5 @@ live_loop :pad do
     end
     
     stop
-
-    end
 end
   

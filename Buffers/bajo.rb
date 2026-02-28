@@ -133,8 +133,7 @@ live_loop :bajo do
     ##| sleep 144
     
     ##| sync :final
-    ##| stop
+    stop
 
-    end
 end
   
