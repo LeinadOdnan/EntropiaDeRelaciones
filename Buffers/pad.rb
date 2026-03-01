@@ -92,27 +92,24 @@ live_loop :pad do
       end
     end
     
-    
-    ##| sync :puente_6
-    ##| sleep 68
-    
     sync :verso7
-    use_synth_defaults attack: 3, decay: 4, sustain: 0.8, release: 8, amp: 1
-    with_fx :lpf, cutoff: 75 do
-      with_fx :reverb, room: 0.9, mix: 0.5 do
-        with_fx :wobble, phase: 18, mix: 0.3 do
-          4.times do
-            sleep 8
-            play chord(:c3, :major)
-            sleep 24
-          end
+    use_synth :hollow
+  use_synth_defaults amp: 1
+  with_fx :lpf, cutoff: 75 do
+    with_fx :reverb, room: 0.9, mix: 0.5 do
+      with_fx :wobble, phase: 18, mix: 0.3 do
+        4.times do
           sleep 8
-          play chord(:c3, :major)
-          sleep 8
+          play chord(:c3, :major) attack: 3, decay: 4, sustain: 0.8, release: 8
+          sleep 24   # acompaña todo el ciclo sin delatar el tempo
         end
+        sleep 8
+        play chord(:c3, :major) attack: 1, decay: 1.3, sustain: 0.3, release: 2.6
+        sleep 8
       end
     end
+  end
     
-    stop
+  stop
 end
   

@@ -165,8 +165,18 @@ live_loop :percusion do
       end
     end
     
-    ##| sync :puente_6
-    ##| sleep 68
+    sync :puente_6
+    with_fx :compressor, threshold: 0.2, slope_above: 0.5 do
+      4.times do
+        slp = line(0.5, 8, steps: 4).tick(:slp)
+        sample :drum_cymbal_closed, amp: 3
+        4.times do
+          sample :bd_haus, amp: 3
+          sample :elec_snare, amp: 1.5
+          sleep slp
+        end
+      end
+    end
     
     ##| sync :verso7
     ##| sleep 144

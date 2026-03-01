@@ -126,8 +126,17 @@ live_loop :bajo do
       end
     end
     
-    ##| sync :puente_6
-    ##| sleep 68
+    sync :puente_6
+    use_synth_defaults amp: 4, release: 0.4
+    with_fx :lpf, cutoff: 60 do
+      4.times do
+        slb = line(0.5, 8, steps: 4).tick(:slb)
+        play :a2; sleep slb
+        play :g2; sleep slb
+        play :e2; sleep slb
+        play :d2; sleep slb
+      end
+    end
     
     ##| sync :verso7
     ##| sleep 144
