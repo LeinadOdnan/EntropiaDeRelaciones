@@ -178,10 +178,6 @@ live_loop :percusion do
       end
     end
     
-    ##| sync :verso7
-    ##| sleep 144
-    
-    ##| sync :final
     stop
 
 end

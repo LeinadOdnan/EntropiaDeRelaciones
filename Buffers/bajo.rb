@@ -138,10 +138,6 @@ live_loop :bajo do
       end
     end
     
-    ##| sync :verso7
-    ##| sleep 144
-    
-    ##| sync :final
     stop
 
 end
