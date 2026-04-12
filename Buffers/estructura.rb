@@ -10,6 +10,23 @@ define :subintro do
   end
 end
 
+#Effects to samples
+define :fx_sample do |&block|
+  with_fx :reverb, room: 0.5, mix: 0.3 do
+    with_fx :distortion, distort: 0.3 do
+      block.call
+    end
+  end
+end
+
+#Play Samples
+define :playSample do |numberOfTimes, externalSample, ampVolume, releaseLength, interval|
+  numberOfTimes.times do
+    sample externalSample, rate: 0.7, amp: ampVolume, cutoff: 70, attack: 0.05, release: releaseLength
+    sleep interval
+  end
+end
+
 #CLOCK (heart)
 live_loop :clock do
   #use_bpm 120
