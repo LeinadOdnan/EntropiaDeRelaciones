@@ -40,7 +40,7 @@ live_loop :lead do
         subintro
       end
     end
-    
+    cue :intro_end #Sync with structure
     
     sync :verso_1
     use_synth :square
@@ -49,7 +49,7 @@ live_loop :lead do
         play :e4; sleep 0.5
         play :e4; sleep 0.5
         play :g4; sleep 0.5
-        play :a4; sleep 0.5 #dura 2 beats
+        play :a4; sleep 0.5 
       end
     end
     
@@ -69,7 +69,7 @@ live_loop :lead do
         play :g4, release: rel2
         sleep 1
         play :e4, release: rel3
-        sleep 2 #duara 4.5 beats
+        sleep 2
       end
     end
     
@@ -174,7 +174,7 @@ live_loop :lead do
         atck2 = rrand(1, 1.25)
         rel1 = rrand(4.05, 8.55)
         rel2 = rrand(5.75, 7.75)
-        play :g4, attack: atck1, release: rel1 #Añadir un pulse o un snare en este tiempo
+        play :g4, attack: atck1, release: rel1
         sleep 2.25
         play :e4, attack: atck1, release: rel1
         sleep 2.25
