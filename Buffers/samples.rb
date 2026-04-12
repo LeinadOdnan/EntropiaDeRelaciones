@@ -25,4 +25,24 @@ live_loop :samples do
     playSample 6, Samples[6], 15, 11, 12
   end
 
+  sync :puente_4
+  fx_sample do
+    playSample 3, Samples[7], 9, 8, 12
+  end
+
+  sync :puente_5
+  fx_sample do
+    playSample 6, Samples[8], 15, 9, 10
+  end
+
+  sync :puente_6
+  fx_sample do
+    playSample 4, Samples[9], 12, 11, 17
+  end
+
+  sync :final
+  fx_sample do
+    playSample 3, Samples[10], 9, 9, 11
+  end
+
 end
