@@ -1,5 +1,5 @@
 #Correr los instrumentos primero y a ultimo la estructura.
-
+#use_bpm 120
 #Compaces/ notas
 define :subintro do
   notes = [:e3, :g3, :a3, :b3, :a3, :g3].shuffle
@@ -27,61 +27,53 @@ define :playSample do |numberOfTimes, externalSample, ampVolume, releaseLength, 
   end
 end
 
-#CLOCK (heart)
-live_loop :clock do
-  #use_bpm 120
-  sleep 0.5
-end
-
 #STRUCTURE
 live_loop :estructura do
-  
-  sync :clock
   
   cue :intro
   sync :intro_end #Sync with intruments
   
   cue :verso_1
-  sleep 64
+  sync :verso_1_end
   
   cue :puente_1
-  sleep 36
+  sync :puente_1_end
   
   cue :verso_2
-  sleep 90
+  sync :verso_2_end
   
   cue :puente_2
-  sleep 72
+  sync :puente_2_end
   
   cue :verso_3
-  sleep 36
+  sync :verso_3_end
   
   cue :puente_3
-  sleep 72
+  sync :puente_3_end
   
   cue :verso_4
-  sleep 45
+  sync :verso_4_end
   
   cue :puente_4
-  sleep 36
+  sync :puente_4_end
   
   cue :verso_5
-  sleep 108
+  sync :verso_5_end
   
   cue :puente_5
-  sleep 60
+  sync :puente_5_end
   
   cue :verso_6
-  sleep 50
+  sync :verso_6_end
   
   cue :puente_6
-  sleep 68
+  sync :puente_6_end
   
   cue :verso7
-  sleep 144
+  sync :verso7_end
   
   cue :final
-  sleep 63
+  sync :final_end
   
   stop
 end

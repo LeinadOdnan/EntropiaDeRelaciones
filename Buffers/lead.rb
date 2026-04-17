@@ -52,7 +52,7 @@ live_loop :lead do
         play :a4; sleep 0.5 
       end
     end
-    
+    cue :verso_1_end
     
     sync :puente_1
     use_synth :dsaw
@@ -72,7 +72,8 @@ live_loop :lead do
         sleep 2
       end
     end
-    
+    cue :puente_1_end
+
     sync :verso_2
     use_synth :prophet
     use_synth_defaults amp: 0.8, sustain: 0, attack_level: 0.3
@@ -93,6 +94,7 @@ live_loop :lead do
         sleep 4
       end
     end
+    cue :verso_2_end
     
     sync :puente_2
     use_synth :fm
@@ -113,6 +115,7 @@ live_loop :lead do
         end
       end
     end
+    cue :puente_2_end
     
     sync :verso_3
     use_synth :fm
@@ -133,6 +136,7 @@ live_loop :lead do
         end
       end
     end
+    cue :verso_3_end
     
     sync :puente_3
     use_synth :fm
@@ -163,6 +167,7 @@ live_loop :lead do
         end
       end
     end
+    cue :puente_3_end
     
     sync :verso_4
     use_synth :prophet
@@ -182,6 +187,7 @@ live_loop :lead do
         sleep 4.5
       end
     end
+    cue :verso_4_end
     
     sync :puente_4
     use_synth :dsaw
@@ -199,6 +205,7 @@ live_loop :lead do
         sleep 1.75
       end
     end
+    cue :puente_4_end
     
     sync :verso_5
     use_synth :prophet
@@ -226,6 +233,7 @@ live_loop :lead do
         sleep 4.5
       end
     end
+    cue :verso_5_end
     
     sync :puente_5
     use_synth :fm
@@ -247,6 +255,7 @@ live_loop :lead do
         end
       end
     end
+    cue :puente_5_end
     
     sync :verso_6
     use_synth :dsaw
@@ -261,6 +270,7 @@ live_loop :lead do
         end
       end
     end
+    cue :verso_6_end
     
     sync :puente_6
     use_synth :dsaw
@@ -286,6 +296,7 @@ live_loop :lead do
         end
       end
     end
+    cue :puente_6_end
     
     sync :verso7
     use_synth :piano
@@ -300,6 +311,7 @@ live_loop :lead do
         sleep 16
       end
     end
+    cue :verso7_end
     
     sync :final
     use_synth :piano
